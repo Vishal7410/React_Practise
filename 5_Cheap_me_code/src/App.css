@@ -8,17 +8,21 @@
   margin: 10px;
   justify-content: space-between;
   border: 1px solid black;
+  align-items: center;
 }
 .nav-items>ul{
   display: flex;
   text-decoration: none;
   /* gap: 30px; */
   text-align: center;
-  list-style: none; 
+  list-style: none;
+ 
+ 
 }
 
 .nav-items>ul>li{
-  /* padding: 20px; */
+  padding: 5px;
+  
 }
 .Logo{
  /* height: 100px; */
@@ -67,5 +71,8 @@
 
 .Item_heading{
   color: rgb(19, 115, 122);
+}
+.search_input{
+  margin: 10px;
 }
  

@@ -1,7 +1,7 @@
 //import { useState } from "react";
 
 import "./App.css";
-import { Body } from "./Component/Body/Body.jsx";
+import  Body  from "./Component/Body/Body.jsx";
 import Footer from "./Component/Footer/Footer.jsx"
 import { HeaderComponent } from "./Component/HeaderComponent/HeaderComponent.jsx";
 

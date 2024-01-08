@@ -34,10 +34,10 @@ import { FOOD_IMG_CDN } from "../Contant/Contant";
         />
   
         <div className="set_aline">
-          <h3 className="Item_heading">Item: {name}</h3>
+          <h3 className="Item_heading">{name}</h3>
   
-          <h4>Price: {costForTwoString}</h4>
-          <h4>Time:{slaString}</h4>
+          <h4>{costForTwoString}</h4>
+          <h4>{slaString}</h4>
           <br />
   
           <div className="Card_Details">
