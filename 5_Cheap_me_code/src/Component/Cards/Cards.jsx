@@ -13,39 +13,43 @@ import { FOOD_IMG_CDN } from "../Contant/Contant";
 // const card = {user?.image?.data?.name}
 
  const Cards = ({
-    name,
-    cloudinaryImageId,
-    slaString,
-    costForTwoString,
-    cuisines,
-    locality,
-    area,
+  cloudinaryImageId,
+  name,
+  cuisines,
+  areaName,
+  sla,
+  costForTwo,
+  avgRatingString,
+    //areaName,
+   // differentiatedUi
+    
+
   }) => {
     // console.log(restaurant);
     return (
       <div className="Cards">
+        
         <img
           className="Card_Image"
           src={
-             FOOD_IMG_CDN +
-            // eslint-disable-next-line react/prop-types
-            cloudinaryImageId
+             FOOD_IMG_CDN+cloudinaryImageId
           }
-        />
+        /> <br />
   
         <div className="set_aline">
           <h3 className="Item_heading">{name}</h3>
   
-          <h4>{costForTwoString}</h4>
-          <h4>{slaString}</h4>
-          <br />
+          <h4>{areaName}</h4>
+          <h4>{sla?.slaString}</h4>
+          
   
           <div className="Card_Details">
-            <p>{cuisines}</p>
-            <p>{locality}</p>
+            <h4>{cuisines.join(", ")} </h4>  
+            {/* <h5>{costForTwo}</h5>     */}
+            <p>Avg.Rating {avgRatingString}</p> 
   
             {/* <p>Locality: {restaurant.data?.locality}</p>  restaurant.data?.locality */}
-            <p>{area}</p>
+            <p>{costForTwo}</p>
           </div>
         </div>
       </div>

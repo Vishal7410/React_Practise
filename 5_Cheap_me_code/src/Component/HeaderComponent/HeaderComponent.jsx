@@ -1,18 +1,29 @@
+import { useState } from "react";
+
+
 const Logo = () => (
     <>
       <img
-        src="https://scontent.fpnq7-5.fna.fbcdn.net/v/t39.30808-6/304797929_463513755788181_7687992048680015416_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=2QQlr7GInhMAX-G9bCe&_nc_ht=scontent.fpnq7-5.fna&oh=00_AfBHFhj35EWh2g08cN8I44P33SaR8Ot3TtY3niXziMdGZA&oe=659B2F5B"
+        src="https://foodtech-files.s3-eu-west-2.amazonaws.com/f666015f4d4a2ae28b3ab5d0b0fa9d445a9f65e864f77334fb561f771ca59592"
         className="Logo"
         alt=""
       />
+    
     </>
   );
 
 export const HeaderComponent = () => {
+  const [title, setitle] = useState("FoodZilla")
+  const [isloggedIn, setIsLoggin] = useState(false)
   return (
     <>
       <div className="Header">
+
         <Logo />
+        
+        <h1>{title}</h1>
+
+        <button onClick={()=> setitle("food Villa")}>change title</button>
         <div className="nav-items">
           <ul>
             <li>
@@ -28,7 +39,24 @@ export const HeaderComponent = () => {
               <a href="#Cart"></a>Cart
             </li>
           </ul>
+
+          
         </div>
+           {/* use conditional rendering for login and logOut */}
+
+           {isloggedIn?
+           <button
+           className="Logout_btn"
+           onClick={()=>  setIsLoggin(false)}
+           >LogOut
+           </button>:
+
+           <button
+           className="login_btn"
+           onClick={()=> setIsLoggin(true)}
+           
+           >Login</button>
+}
       </div>
     </>
   );
