@@ -37,7 +37,7 @@
   /* padding: 5px; */
 }
 .Cards{
-  
+
   background-color: rgb(220, 236, 195);
   /* height: 18rem; */
   width: 250px;
@@ -45,16 +45,41 @@
   padding: 10px;
   border: 1px solid black;
   overflow: hidden;
+  flex-wrap: wrap;
 }
+.Outer_Box{
+ 
+  height: 250px;
+  width: 250px;
+  
+
+}
+.first_box{
+  
+  background-color: lightgray;
+  margin-top: 50px;
+  width: 250px;
+  height: 50px  
+ 
+}
+
+.secound_box{
+ 
+  background-color: lightgray;
+  margin-top: 10px;
+  width: 250px;
+  height: 190px  
+ 
+}
+
 .body_card{
   /* padding: 10px; */
   /* margin: 10px; */
   display: flex;
   /* gap: 10px; */
   flex-wrap: wrap;
- 
   justify-content: start;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   
 
 }

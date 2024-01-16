@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const Logo = () => (
@@ -13,17 +13,23 @@ const Logo = () => (
   );
 
 export const HeaderComponent = () => {
-  const [title, setitle] = useState("FoodZilla")
+  // const [title, setitle] = useState("FoodZilla")  
+
   const [isloggedIn, setIsLoggin] = useState(false)
+
+  useEffect(() => {
+    console.log("useEffect called");
+  },[]);
+  console.log("render");
+
   return (
     <>
       <div className="Header">
-
         <Logo />
         
-        <h1>{title}</h1>
+        {/* <h1>{title}</h1> */}
 
-        <button onClick={()=> setitle("food Villa")}>change title</button>
+        {/* <button onClick={()=> setitle("food Villa")}>change title</button> */}
         <div className="nav-items">
           <ul>
             <li>
@@ -38,9 +44,7 @@ export const HeaderComponent = () => {
             <li>
               <a href="#Cart"></a>Cart
             </li>
-          </ul>
-
-          
+          </ul>        
         </div>
            {/* use conditional rendering for login and logOut */}
 
