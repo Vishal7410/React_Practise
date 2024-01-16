@@ -21,7 +21,7 @@ const Body = () => {
   useEffect(() => { 
     // API Call    
     getRestaurants();
-  }, [ ]);
+  }, [searchText]);
 
   async function getRestaurants() {
     const data = await fetch(
@@ -40,8 +40,8 @@ const Body = () => {
    // not render component (Early return)
    if (!allRestaurants) return null;
 
-   if (filteredRestaurants?.length === 0)
-   return <h1> No Restaurants match your Filter !!</h1>
+  //  if (filteredRestaurants?.length === 0)
+  //  return <h1> No Restaurants match your Filter !!</h1>
 
    //Conditional Rendering 
   return (allRestaurants.length===0)?<ShimmerUI/>:(
