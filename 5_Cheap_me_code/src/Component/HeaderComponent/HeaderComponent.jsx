@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const Logo = () => (
@@ -32,18 +33,15 @@ export const HeaderComponent = () => {
         {/* <button onClick={()=> setitle("food Villa")}>change title</button> */}
         <div className="nav-items">
           <ul>
-            <li>
-              <a href="#Home"></a>Home
-            </li>
-            <li>
-              <a href="#About"></a>About
-            </li>
-            <li>
-              <a href="#Contact"></a>Contact Us
-            </li>
-            <li>
-              <a href="#Cart"></a>Cart
-            </li>
+            
+          <li><Link to ={`/`} >Home</Link></li>
+           
+           <li><Link to ={`/about`} >About</Link></li>
+           
+           <li><Link to ={`/contactUs`} >ContactUs</Link></li>
+
+           <li><Link to ={`/cart`} >Cart</Link></li>
+
           </ul>        
         </div>
            {/* use conditional rendering for login and logOut */}

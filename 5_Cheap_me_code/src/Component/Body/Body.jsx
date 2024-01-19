@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Cards from "../Cards/Cards";
 //import { restaurantList } from "../Contant/Contant";
 import ShimmerUI from "../Shimmer_UI/ShimmerUI";
+import { SWIGGY_APP_URL } from "../Contant/Contant";
 
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
@@ -24,9 +25,7 @@ const Body = () => {
   }, [searchText]);
 
   async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(SWIGGY_APP_URL);
     const json = await data.json();
       console.log(json);
    // optional Chaining
