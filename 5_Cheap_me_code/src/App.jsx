@@ -10,6 +10,7 @@ import ContactUs from "./Component/NavPages/ContactUs.jsx";
 import Cart from "./Component/NavPages/Cart.jsx";
 import ErrorPage from "./Component/NavPages/ErrorPage.jsx";
 import RestaurantMenu from "./Component/RestaurantMenu.jsx";
+import Profile from "./Component/NavPages/Profile.jsx";
 
 
 function App() {         //you can also called these component AppLayout because it is also called the layout component
@@ -32,19 +33,23 @@ const appRouter = createBrowserRouter([
         element: <Body />
       },
       {
-        path: "about",
-        element: <About />
+        path: "/about",
+        element: <About />,
+        children: [{
+          path: "profile",
+          element: <Profile />
+        }]
       },
       {
-        path: "contactUs",
+        path: "/contactUs",
         element: <ContactUs />
       },
       {
-        path: "cart",
+        path: "/cart",
         element: <Cart />
       },
       {
-        path: "restaurantMenu/:Id",
+        path: "/restaurantMenu/:Id",
         element: <RestaurantMenu />
       },
     ]

@@ -15,7 +15,7 @@ const ErrorPage =() => {
         <h1 style= {{
             textAlign: "center",
             justifyContent: "center",
-            backgroundColor: "blue"
+            color:"red"
 
     }}>{status} {statusText} </h1>
 

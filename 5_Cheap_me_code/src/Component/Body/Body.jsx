@@ -3,6 +3,7 @@ import Cards from "../Cards/Cards";
 //import { restaurantList } from "../Contant/Contant";
 import ShimmerUI from "../Shimmer_UI/ShimmerUI";
 import { SWIGGY_APP_URL } from "../Contant/Contant";
+import { Link } from "react-router-dom";
 
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
@@ -79,7 +80,12 @@ const Body = () => {
           // Why we not use index as a key ??
 
           return (
-            <Cards  key={restaurant?.info?.id} {...restaurant.info}/>
+            // eslint-disable-next-line react/jsx-key
+            <Link to={"restaurant/"+ restaurant?.info?.id}
+            key={restaurant?.info?.id} >
+            
+              <Cards{...restaurant.info}/></Link>
+           
             // Why we not use index as a key ??
             // To find out every item should have the unique id
           );
