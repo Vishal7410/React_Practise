@@ -19,7 +19,7 @@ export const HeaderComponent = () => {
   const [isloggedIn, setIsLoggin] = useState(false)
 
   useEffect(() => {
-    console.log("useEffect called");
+    // console.log("useEffect called");
   },[]);
   console.log("render");
 

@@ -1,11 +1,23 @@
-import React from "react";
+import React from "react"
 import Profile from "./Profile";
-import { Link, Outlet } from "react-router-dom";
 import ProfileClassComponent from "./ProfileClass";
+class About extends React.Component{
+ 
+  constructor(props){
+    super(props);
+    console.log("About-constructor");
+  }
 
-const About = () => {
-  return (
-    <>
+  componentDidMount(){
+    console.log("parent-About ComponentDidMount call");
+  }
+  
+
+  render(){
+    console.log("About-render");
+
+    return(
+         <>
       <h1>Your About Us Page</h1>
      
       {/* <Link to={"/profile"}>Click me <Profile/></Link> */}
@@ -24,6 +36,9 @@ const About = () => {
         <ProfileClassComponent name={"AkashayClass"} XYZ="abc" />
       
     </>
-  );
-};
-export default About;
+    )
+
+  }
+}
+
+export default About

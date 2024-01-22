@@ -1,17 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Profile = (props) => {
-
+  
     const [count, setCount] = useState(0); 
     // set count always usese in Button or Onchange event
    // Write Using the CallBack arrow function
-   // Also any updation element like setCount and React always track It.
-
-   
+   // Also any updation element like setCount and React always track It. 
     const [count2, setCount2] = useState(0);
+
+    console.log("profile-constructor call");
+
+    useEffect(()=> {console.log("component profile useEffect() similar to componentDidMount call")},[])
+
+    console.log("render-Profile");
 
   return (
     <>
+    
       <div
         style={{
           backgroundColor: "aquamarine",

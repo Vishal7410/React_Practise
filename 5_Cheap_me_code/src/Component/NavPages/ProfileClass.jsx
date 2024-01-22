@@ -7,10 +7,21 @@ class Profile extends React.Component {
         this.state={
          count: 0,
          count2: 0
+        
         };
+        console.log("ProfileClass-constructor"); //1st render
     }
 
+    componentDidMount(){
+      // Its old uses like useEffect but it is not exactly the UseEffect
+      //This method is best place to make Api Call
+      console.log("ComponentDidMount ProfileClass Render"); //3rd render
+    }
+
+ 
+
   render() {
+    console.log("ProfileClass- render"); //2nd render
     return (
       <>
         <div
