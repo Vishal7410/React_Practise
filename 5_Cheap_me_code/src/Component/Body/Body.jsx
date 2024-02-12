@@ -4,17 +4,12 @@ import Cards from "../Cards/Cards";
 import ShimmerUI from "../Shimmer_UI/ShimmerUI";
 import { SWIGGY_APP_URL } from "../Contant/Contant";
 import { Link } from "react-router-dom";
+import { filterData } from "../../utils/helper";
+import useOnline from "../../utils/useOnline";
 
-function filterData(searchText, restaurants) {
-  const filterData = restaurants.filter((restaurant) =>
-    restaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-  );
-  return filterData;
-  // console.log(filterData);
-}
-// console.log(filterData);
 
-const Body = () => {
+
+const Body = () => { 
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setsearchTxt] = useState("");
@@ -36,6 +31,12 @@ const Body = () => {
   }
 
    console.log("Render");
+   
+   const isOnline = useOnline();
+   
+   if(!isOnline){
+    return <h1>You are Offline Please Check your Internet connection!! </h1>;
+   }
    
    // not render component (Early return)
    if (!allRestaurants) return null;
@@ -81,14 +82,15 @@ const Body = () => {
 
           return (
             // eslint-disable-next-line react/jsx-key
-            <Link to={"restaurant/"+ restaurant?.info?.id}
-            key={restaurant?.info?.id} >
+            <Link to={"/restaurant/" + restaurant?.info?.Id}
+            key={restaurant?.info?.Id} >
             
-              <Cards{...restaurant.info}/></Link>
+              <Cards {...restaurant.info}/>
+              </Link>
            
             // Why we not use index as a key ??
             // To find out every item should have the unique id
-          );
+          ); 
         })}
       </div>
     </>

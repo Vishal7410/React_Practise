@@ -6,7 +6,7 @@ class About extends React.Component {
     super(props);
     console.log("About-constructor");
   }
-
+  
   componentDidMount() {
     console.log("parent-About ComponentDidMount call");
   }

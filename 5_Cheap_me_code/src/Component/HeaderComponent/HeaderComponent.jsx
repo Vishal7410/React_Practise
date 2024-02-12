@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useOnline from "../../utils/useOnline";
 
 
 const Logo = () => (
@@ -17,6 +18,8 @@ export const HeaderComponent = () => {
   // const [title, setitle] = useState("FoodZilla")  
 
   const [isloggedIn, setIsLoggin] = useState(false)
+
+  const isOnline = useOnline();
 
   useEffect(() => {
     // console.log("useEffect called");
@@ -42,10 +45,12 @@ export const HeaderComponent = () => {
 
            <li><Link to ={`/cart`} >Cart</Link></li>
 
+           <li><Link to ={`/lazyLoad`} >LazyLoad</Link></li>
+
           </ul>        
         </div>
            {/* use conditional rendering for login and logOut */}
-
+           <h1>{isOnline ? "Online":"Offline"}</h1>
            {isloggedIn?
            <button
            className="Logout_btn"
