@@ -7,7 +7,7 @@ const Logo = () => (
     <>
       <img
         src="https://foodtech-files.s3-eu-west-2.amazonaws.com/f666015f4d4a2ae28b3ab5d0b0fa9d445a9f65e864f77334fb561f771ca59592"
-        className="Logo"
+        className="w-45 h-20"
         alt=""
       />
     
@@ -28,14 +28,14 @@ export const HeaderComponent = () => {
 
   return (
     <>
-      <div className="Header">
+      <div className= "flex justify-between bg-slate-300 ">
         <Logo />
         
         {/* <h1>{title}</h1> */}
 
         {/* <button onClick={()=> setitle("food Villa")}>change title</button> */}
-        <div className="nav-items">
-          <ul>
+        <div className="">
+          <ul className=" m-5 flex gap-5 text-xl ">
             
           <li><Link to ={`/`} >Home</Link></li>
            
@@ -47,23 +47,30 @@ export const HeaderComponent = () => {
 
            <li><Link to ={`/lazyLoad`} >LazyLoad</Link></li>
 
-          </ul>        
-        </div>
-           {/* use conditional rendering for login and logOut */}
-           <h1>{isOnline ? "Online":"Offline"}</h1>
-           {isloggedIn?
+           <div className=" bg-red-400  rounded-lg  ">
+        {isloggedIn?
            <button
-           className="Logout_btn"
+           
            onClick={()=>  setIsLoggin(false)}
            >LogOut
            </button>:
 
            <button
-           className="login_btn"
+           
            onClick={()=> setIsLoggin(true)}
            
            >Login</button>
-}
+            }
+        </div>
+
+           <li><h1 >{isOnline ? <p className="bg-green-500">Online</p>: <p className="bg-red-500">Offline</p>}</h1></li>
+
+
+          </ul>        
+        </div>
+           {/* use conditional rendering for login and logOut */}
+           
+        
       </div>
     </>
   );
