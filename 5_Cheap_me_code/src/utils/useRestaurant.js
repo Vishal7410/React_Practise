@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { SWIGGY_APP_URL } from "../Component/Contant/Contant";
 
-const useRestaurant = (match) => {
+const useRestaurant = (
+  {
+    id,
+    
+  }
+) => {
     const [restaurant, setRestaurant] = useState(null);
 
     console.log("menu Api Check " + restaurant);
@@ -9,11 +14,11 @@ const useRestaurant = (match) => {
     //it will get data from API
 
     useEffect(() => {
-        getRestaurantInfo();
-      }, [match.params.id]);
+        getRestaurantInfo(id);
+      }, []);
     
       async function getRestaurantInfo() {
-        const restaurantId = match.params.id;
+        const restaurantId = id;
         const data = await fetch(`SWIGGY_APP_URL/${restaurantId}` );
         const json = await data.json();
         console.log(" check Json Data", json.data);

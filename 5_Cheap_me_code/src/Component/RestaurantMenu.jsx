@@ -4,13 +4,13 @@ import { FOOD_IMG_CDN, SWIGGY_APP_URL } from "./Contant/Contant";
 import ShimmerUI from "./Shimmer_UI/ShimmerUI";
 import useRestaurant from "../utils/useRestaurant";
 const RestaurantMenu = (
-  //{
-    // cloudinaryImageId,
-    // name,
-    // areaName,
-    // costForTwo,
-    // avgRating,
- // }
+  {
+    cloudinaryImageId,
+    name,
+    areaName,
+    costForTwo,
+    avgRating,
+ }
 ) => {
   // const param = useParams();
   // const { Id } = useParams();
@@ -20,6 +20,7 @@ const RestaurantMenu = (
   const {id} = useParams();
 
    const restraunt = useRestaurant(id);
+   
 
    console.log("restraurant id", restraunt);
 
@@ -37,10 +38,10 @@ const RestaurantMenu = (
         <h1>Restraunt id: {id}</h1>
         <h1>Image nahi dikha raha</h1>
         <img src={FOOD_IMG_CDN+restraunt?.cloudinaryImageId} alt="" />
-        <h2>{restraunt?.name}</h2>
+        <h2>{name}</h2>
         <h3>{restraunt?.areaName}</h3>
         <h3>{restraunt?.costForTwo}</h3>
-        <h3>{restraunt?.avgRating}stars</h3>
+        <h3>stars{restraunt?.avgRating}</h3>
       </div>
 
       <div>
